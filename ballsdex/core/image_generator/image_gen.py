@@ -42,6 +42,12 @@ def draw_card(ball_instance: "BallInstance"):
         ball_health = (131, 98, 240, 255)
     elif ball.regime == Regime.UNION:
         image = Image.open(str(SOURCES_PATH / "union.png"))
+    elif ball.regime == Regime.REBELS:
+        image = Image.open(str(SOURCES_PATH / "rebels.png"))
+    elif ball.regime == Regime.MONARCHY:
+        image = Image.open(str(SOURCES_PATH / "monarchy.png"))
+    elif ball.regime == Regime.TERETORY:
+        image = Image.open(str(SOURCES_PATH / "teretory.png"))
     else:
         raise RuntimeError(f"Regime unknown: {ball.regime}")
 
