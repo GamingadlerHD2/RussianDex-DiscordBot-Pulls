@@ -21,9 +21,6 @@ class Settings:
         Discord token for the bot to connect
     gateway_url: str | None
         The URL of the Discord gateway that this instance of the bot should connect to and use.
-    shard_count: int | None
-        The number of shards to use for this bot instance.
-        Must be equal to the one set in the gateway proxy if used.
     prefix: str
         Prefix for text commands, mostly unused. Defaults to "b."
     collectible_name: str
@@ -52,7 +49,6 @@ class Settings:
 
     bot_token: str = ""
     gateway_url: str | None = None
-    shard_count: int | None = None
     prefix: str = "b."
 
     collectible_name: str = "countryball"
@@ -88,7 +84,6 @@ def read_settings(path: "Path"):
 
     settings.bot_token = content["discord-token"]
     settings.gateway_url = content.get("gateway-url")
-    settings.shard_count = content.get("shard-count")
     settings.prefix = content["text-prefix"]
     settings.team_owners = content.get("owners", {}).get("team-members-are-owners", False)
     settings.co_owners = content.get("owners", {}).get("co-owners", [])
@@ -120,7 +115,7 @@ def write_default_settings(path: "Path"):
 discord-token: 
 
 # prefix for old-style text commands, mostly unused
-text-prefix: b.
+text-prefix: r.
 
 # define the elements given with the /about command
 about:
@@ -131,10 +126,10 @@ about:
     Collect countryballs on Discord, exchange them and battle with friends!
 
   # override this if you have a fork
-  github-link: https://github.com/laggron42/BallsDex-DiscordBot
+  github-link: https://github.com/GamingadlerHD/RussianDex-DiscordBot/
 
   # valid invite for a Discord server
-  discord-invite: https://discord.gg/ballsdex  # BallsDex official server
+  discord-invite: https://discord.gg/Hb5TgrA  # RussianDex official server
 
   terms-of-service: https://gist.github.com/laggron42/52ae099c55c6ee1320a260b0a3ecac4e
   privacy-policy: https://gist.github.com/laggron42/1eaa122013120cdfcc6d27f9485fe0bf
@@ -145,7 +140,7 @@ collectible-name: countryball
 
 # WORK IN PROGRESS, DOES NOT FULLY WORK
 # override the name "BallsDex" in the bot
-bot-name: BallsDex
+bot-name: RussianDex
 
 # players group cog command name
 # this is /balls by default, but you can change it for /animals or /rocks for example
@@ -161,13 +156,17 @@ admin-command:
 
   # list of guild IDs where /admin should be registered
   guild-ids:
+    - 650772147207274523
+    - 659025574940901407
 
   # list of role IDs having full access to /admin
   root-role-ids:
-
+    - 1036311708152627202
+    - 659028509041229825
   # list of role IDs having partial access to /admin
   admin-role-ids:
-
+    - 1075081714021441566
+    - 659028509041229825
 # manage bot ownership
 owners:
   # if enabled and the application is under a team, all team members will be considered as owners
@@ -175,6 +174,7 @@ owners:
 
   # a list of IDs that must be considered owners in addition to the application/team owner
   co-owners:
+    - 637623311773335572
 
 # prometheus metrics collection, leave disabled if you don't know what this is
 prometheus:
