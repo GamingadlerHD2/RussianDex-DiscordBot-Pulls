@@ -53,8 +53,10 @@ def draw_card(ball_instance: "BallInstance"):
 
     if ball.economy == Economy.CAPITALIST:
         icon = Image.open(str(SOURCES_PATH / "capitalist.png"))
-    elif ball.economy == Economy.COMMUNIST or ball.economy == Economy.ANARCHY:
+    elif ball.economy == Economy.COMMUNIST:
         icon = Image.open(str(SOURCES_PATH / "communist.png"))
+    elif ball.economy == Economy.ANARCHY:
+        icon = Image.open(str(SOURCES_PATH / "anarchy.png"))
     else:
         raise RuntimeError(f"Economy unknown: {ball.economy}")
 
