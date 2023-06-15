@@ -117,6 +117,24 @@ class SpecialResource(Model):
             display=displays.Image(width="40"),
             input_=inputs.Image(upload=upload, null=True),
         ),
+        Field(
+            name="rebels_card",
+            label="Rebels card",
+            display=displays.Image(width="40"),
+            input_=inputs.Image(upload=upload, null=True),
+        ),
+        Field(
+            name="monarchy_card",
+            label="Monarchy card",
+            display=displays.Image(width="40"),
+            input_=inputs.Image(upload=upload, null=True),
+        ),
+        Field(
+            name="teretory_card",
+            label="Teretory card",
+            display=displays.Image(width="40"),
+            input_=inputs.Image(upload=upload, null=True),
+        ),
         "emoji",
     ]
 
