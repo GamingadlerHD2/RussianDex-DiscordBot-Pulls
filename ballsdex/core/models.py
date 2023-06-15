@@ -62,7 +62,9 @@ class Regime(IntEnum):
     DEMOCRACY = 1
     DICTATORSHIP = 2
     UNION = 3
-
+    REBELS = 4
+    MONARCHY = 5
+    TERETORY = 6
 
 class Economy(IntEnum):
     CAPITALIST = 1
@@ -86,6 +88,9 @@ class Special(models.Model):
     democracy_card = fields.CharField(max_length=200)
     dictatorship_card = fields.CharField(max_length=200)
     union_card = fields.CharField(max_length=200)
+    rebels_card = fields.CharField(max_length=200)
+    monarchy_card = fields.CharField(max_length=200)
+    teretory_card = fields.CharField(max_length=200)
     emoji = fields.CharField(
         max_length=20,
         description="Either a unicode character or a discord emoji ID",
@@ -102,6 +107,12 @@ class Special(models.Model):
             return self.dictatorship_card
         elif regime == Regime.UNION:
             return self.union_card
+        elif regime == Regime.REBELS:
+            return self.rebels_card
+        elif regime == Regime.MONARCHY:
+            return self.monarchy_card
+        elif regime == Regime.TERETORY:
+            return self.teretory_card
         else:
             return None
 
