@@ -9,6 +9,7 @@ from tortoise.exceptions import DoesNotExist
 from discord import app_commands
 from discord.ui import View, Button, button
 from discord.ext import commands
+from discord.utils import get
 
 from ballsdex.settings import settings
 from ballsdex.core.models import Player, BallInstance, DonationPolicy, balls
