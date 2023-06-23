@@ -489,4 +489,15 @@ class Players(commands.GroupCog, group_name=settings.players_group_cog_name):
                 ephemeral=True,
             )
             return
+    @app_commands.command()
+    @app_commands.checks.cooldown(1, 10, key=lambda i: i.user.id)
+    async def website(self, interaction: discord.Interaction, option: bool):
+        """
+        Get the link to the RussianDex Website.
+        """
+        await interaction.response.send_message(
+                "http://www.europolitics.ch",
+                ephemeral=True,
+            )
+            return
 
